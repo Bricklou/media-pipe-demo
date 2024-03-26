@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  app:
+    ports:
+      - "127.0.0.1:3333:3333"
+    environment:
+      NODE_ENV: production
+      TZ: Europe/Paris
+      HOST: 0.0.0.0
+      APP_KEY: dXW7twZmoIwh_k_gVRLWqW4BXblGLBUk
+      PORT: 3333
+      LOG_LEVEL: info
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
